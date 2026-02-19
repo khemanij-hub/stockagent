@@ -1,1 +1,3 @@
 deploy/gce/*.env
+__pycache__/
+*.pyc
