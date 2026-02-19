@@ -1,0 +1,19 @@
+[Unit]
+Description=Kite Options Bot (India)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=agentbot
+Group=agentbot
+WorkingDirectory=/opt/agentbot/India
+EnvironmentFile=/etc/agentbot/kite.env
+ExecStart=/opt/agentbot/venv/bin/python /opt/agentbot/India/kite_options_brain_csv.py
+Restart=always
+RestartSec=5
+KillSignal=SIGTERM
+TimeoutStopSec=45
+
+[Install]
+WantedBy=multi-user.target
